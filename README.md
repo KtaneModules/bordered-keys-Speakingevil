@@ -1,1 +1,1 @@
-# bordered-keys
+#[ModKit Wiki](../../wiki)
