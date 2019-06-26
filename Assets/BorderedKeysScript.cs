@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -402,7 +402,7 @@ public class BorderedKeysScript : MonoBehaviour
         if (Regex.IsMatch(command, @"^\s*colorblind\s*$", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant))
         {
             colorblind = true;
-            for (int i = 0; i < keys.Count; i++)
+            for (int i = 0; i < 6; i++)
                 setKey(i);
             yield return null;
             yield break;
@@ -413,9 +413,12 @@ public class BorderedKeysScript : MonoBehaviour
             yield return null;
             for (int i = 0; i < 6; i++)
             {
-                keys[i].OnHighlight();
-                yield return new WaitForSeconds(1.2f);
-                keys[i].OnHighlightEnded();
+                if (alreadypressed[i] == false)
+                {
+                    keys[i].OnHighlight();
+                    yield return new WaitForSeconds(1.2f);
+                    keys[i].OnHighlightEnded();
+                }
                 yield return new WaitForSeconds(.1f);
             }
             yield break;
