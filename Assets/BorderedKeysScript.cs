@@ -242,7 +242,7 @@ public class BorderedKeysScript : MonoBehaviour
                     }
                     else
                     {
-                        int rand = Random.Range(pressCount + 1, 7);
+                        int rand = Random.Range(pressCount + 1, Mathf.Min(pressCount + 4, 7));
                         answer.Add(rand.ToString());
                     }
                     for (int j = 0; j < 4; j++)
