@@ -305,7 +305,7 @@ public class BorderedKeysScript : MonoBehaviour
             List<string> f = new List<string> { };
             for (int i = 0; i < 6; i++)
             {
-                if (answer[i] == (resetCount + 1).ToString())
+                if (answer[i] == (pressCount + 1).ToString())
                 {
                     f.Add((i + 1).ToString());
                 }
